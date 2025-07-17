@@ -1,50 +1,50 @@
-const { I } = inject();
+const {I} = inject();
 
 class HomePage {
-  trendingSection = '#most-read-container';
-  featuredNewsSection = '#featured-news-container';
-  trendingArticles = '.article-trending';
-  skipLinksSection = '.bypass-block-links-container';
-  skipToTrendingLink = 'Skip to Most Read';
-  headerArea = '.container--header';
+    trendingSection = '#most-read-container';
+    featuredNewsSection = '#featured-news-container';
+    trendingArticles = '.article-trending';
+    skipLinksSection = '.bypass-block-links-container';
+    skipToTrendingLink = 'Skip to Most Read';
+    headerArea = '.container--header';
 
-  scrollToTrendingSection() {
-    I.waitForVisible(this.featuredNewsSection);
-    I.scrollTo(this.trendingSection);
-  }
+    scrollToTrendingSection() {
+        I.waitForVisible(this.featuredNewsSection);
+        I.scrollTo(this.trendingSection);
+    }
 
-  verifyTrendingSectionVisible() {
-    I.seeElement(this.trendingSection);
-  }
+    verifyTrendingSectionVisible() {
+        I.seeElement(this.trendingSection);
+    }
 
-  verifyTrendingSectionHidden() {
-    I.dontSeeElement(this.trendingSection);
-  }
+    verifyTrendingSectionHidden() {
+        I.dontSeeElement(this.trendingSection);
+    }
 
-  validateTrendingArticleCount(count) {
-    I.seeNumberOfElements(this.trendingArticles, count);
-  }
+    validateTrendingArticleCount(count) {
+        I.seeNumberOfElements(this.trendingArticles, count);
+    }
 
-  launchHomePage() {
-    I.amOnPage('https://aljazeera.com/');
-  }
+    launchHomePage() {
+        I.amOnPage('https://aljazeera.com/');
+    }
 
-  activateSkipToTrending() {
-    I.waitForVisible(this.skipLinksSection);
-    I.click(this.skipToTrendingLink);
-  }
+    activateSkipToTrending() {
+        I.waitForVisible(this.skipLinksSection);
+        I.click(this.skipToTrendingLink);
+    }
 
-  async tapHeaderArea() {
-    I.click(this.headerArea);
-  }
+    tapHeaderArea() {
+        I.click(this.headerArea);
+    }
 
-  triggerSkipLinkMenu() {
-    I.pressKey('Tab');
-  }
+    triggerSkipLinkMenu() {
+        I.pressKey('Tab');
+    }
 
-  assertUrlIncludes(value) {
-    I.waitInUrl(value);
-  }
+    assertUrlIncludes(value) {
+        I.waitInUrl(value);
+    }
 
 }
 
